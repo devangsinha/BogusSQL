@@ -1,0 +1,12 @@
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\BogusSQLTest.exe.config
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\BogusSQLTest.exe
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\BogusSQLTest.pdb
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\BogusSQL.dll
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\Bogus.dll
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\Newtonsoft.Json.dll
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\BogusSQL.pdb
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\Bogus.xml
+C:\Development\BogusSQL\BogusSQLTest\bin\Debug\Newtonsoft.Json.xml
+C:\Development\BogusSQL\BogusSQLTest\obj\Debug\BogusSQLTest.csprojResolveAssemblyReference.cache
+C:\Development\BogusSQL\BogusSQLTest\obj\Debug\BogusSQLTest.exe
+C:\Development\BogusSQL\BogusSQLTest\obj\Debug\BogusSQLTest.pdb
