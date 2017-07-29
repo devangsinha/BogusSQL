@@ -26,7 +26,8 @@ namespace BogusSQLTest
             {
                 ColumnDataType = DataType.VARCHAR,
                 ColumnDataContent = DataContent.FIRSTNAME,
-                ColumnName = "FirstName"
+                ColumnName = "FirstName",
+                DefaultValue = "DEVANG"
             };
             var column3 = new Column
             {

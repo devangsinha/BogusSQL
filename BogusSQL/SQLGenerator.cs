@@ -47,32 +47,32 @@ namespace BogusSQL
                 var sql2 = "";
                 for (var j = 0; j < ListOfColumns.Count; j++)
                 {
-                    var schema = ListOfColumns.ElementAt(j);
-                    switch (schema.ColumnDataContent)
+                    var column = ListOfColumns.ElementAt(j);
+                    switch (column.ColumnDataContent)
                     {
                         case DataContent.FIRSTNAME:
-                            sql2 += "'" + faker.Person.FirstName + "',";
+                            sql2 += "'" + (column.DefaultValue ?? faker.Person.FirstName) + "',";
                             break;
                         case DataContent.LASTNAME:
-                            sql2 += "'" + faker.Person.LastName + "',";
+                            sql2 += "'" + (column.DefaultValue ?? faker.Person.LastName) + "',";
                             break;
                         case DataContent.GUID:
                             sql2 += "'" + Guid.NewGuid() + "',";
                             break;
                         case DataContent.DATE:
-                            sql2 += "'" + faker.Person.DateOfBirth.ToShortDateString() + "',";
+                            sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth.ToShortDateString()) + "',";
                             break;
                         case DataContent.DATETIME:                            
-                            sql2 += "'" + faker.Person.DateOfBirth + "',";
+                            sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth) + "',";
                             break;
                         case DataContent.COMPANY:
-                            sql2 += "'" + faker.Company.CompanyName() + "',";
+                            sql2 += "'" + (column.DefaultValue ?? faker.Company.CompanyName()) + "',";
                             break;
                         case DataContent.USERNAME:
-                            sql2 += "'" + faker.Person.UserName + "',";
+                            sql2 += "'" + (column.DefaultValue ?? faker.Person.UserName) + "',";
                             break;
                         case DataContent.PHONE:
-                            sql2 += "'" + faker.Phone.PhoneNumber() + "',";
+                            sql2 += "'" + (column.DefaultValue ?? faker.Phone.PhoneNumber()) + "',";
                             break;
                     }
                 }

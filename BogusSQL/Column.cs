@@ -12,5 +12,6 @@ namespace BogusSQL
         public DataContent ColumnDataContent { get; set; }
         public string ColumnName { get; set; }
         public int Count { get; set; }
+        public object DefaultValue { get; set; }
     }
 }
