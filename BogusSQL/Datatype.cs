@@ -10,6 +10,8 @@ namespace BogusSQL
     {
         VARCHAR,
         INT,
-        UNIQUEIDENTIFIER
+        UNIQUEIDENTIFIER,
+        DATE,
+        DATETIME
     }
 }

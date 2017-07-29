@@ -33,9 +33,7 @@ namespace BogusSQL
 
         public string GenerateSql()
         {
-            string sql = null;
-            var thread = new Thread(() => { sql = GenerateSqlQuery(); });
-            thread.Start();
+            var sql = GenerateSqlQuery();
             return sql;
         }
 
@@ -56,17 +54,32 @@ namespace BogusSQL
                 for (var j = 0; j < ListOfColumns.Count; j++)
                 {
                     var schema = ListOfColumns.ElementAt(j);
-                    if (schema.ColumnDataContent == DataContent.FIRSTNAME)
+                    switch (schema.ColumnDataContent)
                     {
-                        sql2 += "'" + faker.Person.FirstName + "',";
-                    }
-                    if (schema.ColumnDataContent == DataContent.LASTNAME)
-                    {
-                        sql2 += "'" + faker.Person.LastName + "',";
-                    }
-                    if (schema.ColumnDataContent == DataContent.GUID)
-                    {
-                        sql2 += "'" + Guid.NewGuid() + "',";
+                        case DataContent.FIRSTNAME:
+                            sql2 += "'" + faker.Person.FirstName + "',";
+                            break;
+                        case DataContent.LASTNAME:
+                            sql2 += "'" + faker.Person.LastName + "',";
+                            break;
+                        case DataContent.GUID:
+                            sql2 += "'" + Guid.NewGuid() + "',";
+                            break;
+                        case DataContent.DATE:
+                            sql2 += "'" + faker.Person.DateOfBirth.ToShortDateString() + "',";
+                            break;
+                        case DataContent.DATETIME:                            
+                            sql2 += "'" + faker.Person.DateOfBirth + "',";
+                            break;
+                        case DataContent.COMPANY:
+                            sql2 += "'" + faker.Company.CompanyName() + "',";
+                            break;
+                        case DataContent.USERNAME:
+                            sql2 += "'" + faker.Person.UserName + "',";
+                            break;
+                        case DataContent.PHONE:
+                            sql2 += "'" + faker.Phone.PhoneNumber() + "',";
+                            break;
                     }
                 }
                 sql2 = sql2.Remove(sql2.LastIndexOf(",", StringComparison.Ordinal));

@@ -14,6 +14,12 @@ namespace BogusSQL
         CITY,
         STATE,
         ZIP,
-        GUID
+        GUID,
+        DATE,
+        DATETIME,
+        COMPANY,
+        PHONE,
+        USERNAME,
+        WEBSITE
     }
 }

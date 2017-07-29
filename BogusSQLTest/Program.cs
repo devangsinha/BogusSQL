@@ -14,11 +14,16 @@ namespace BogusSQLTest
             var obj = new SqlGenerator
             {
                 TableName = "MyTable",
-                RowCount = 10000
+                RowCount = 100
             };
             obj.SetColumn("GUID", DataType.UNIQUEIDENTIFIER, DataContent.GUID);
             obj.SetColumn("FirstName", DataType.VARCHAR, DataContent.FIRSTNAME);
             obj.SetColumn("LastName", DataType.VARCHAR, DataContent.LASTNAME);
+            obj.SetColumn("Birthday", DataType.DATE, DataContent.DATE);
+            obj.SetColumn("Timestamp", DataType.DATETIME, DataContent.DATETIME);
+            obj.SetColumn("Company", DataType.VARCHAR, DataContent.COMPANY);
+            obj.SetColumn("Username", DataType.VARCHAR, DataContent.USERNAME);
+            obj.SetColumn("Phone", DataType.VARCHAR, DataContent.PHONE);
             var sql = obj.GenerateSql();
             Console.WriteLine(sql);
             Console.ReadKey();
