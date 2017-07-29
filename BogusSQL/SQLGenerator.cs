@@ -25,9 +25,22 @@ namespace BogusSQL
             ListOfColumns.Add(column);
         }
 
-        public string GenerateSql()
+        private static string BuildSqlQuery(string sql, object randomValue, Column column)
         {
-            var sql = GenerateSqlQuery();
+            if (column.ValueFrequency == 0)
+            {
+                sql += "'" + (column.DefaultValue ?? randomValue) + "',";
+            }
+            else
+            {
+                column.DefaultValue = (column.DefaultValue ?? randomValue);
+                sql += "'" + column.DefaultValue + "',";
+                column.ValueFrequency--;
+                if (column.ValueFrequency == 0)
+                {
+                    column.DefaultValue = null;
+                }
+            }
             return sql;
         }
 
@@ -52,120 +65,28 @@ namespace BogusSQL
                     switch (column.ColumnDataContent)
                     {
                         case DataContent.FIRSTNAME:
-                            if (valueFrequency == 0)
-                            {
-                                sql2 += "'" + (column.DefaultValue ?? faker.Person.FirstName) + "',";
-                            }
-                            else
-                            {
-                                column.DefaultValue = (column.DefaultValue ?? faker.Person.FirstName);
-                                sql2 += "'" + column.DefaultValue + "',";
-                                column.ValueFrequency--;
-                                if (column.ValueFrequency == 0)
-                                {
-                                    column.DefaultValue = null;
-                                }
-                            }
+                            sql2 = BuildSqlQuery(sql2, faker.Person.FirstName, column);
                             break;
-                        case DataContent.LASTNAME:
-                            if (valueFrequency == 0)
-                            {
-                                sql2 += "'" + (column.DefaultValue ?? faker.Person.LastName) + "',";
-                            }
-                            else
-                            {
-                                column.DefaultValue = (column.DefaultValue ?? faker.Person.LastName);
-                                sql2 += "'" + column.DefaultValue + "',";
-                                column.ValueFrequency--;
-                                if (column.ValueFrequency == 0)
-                                {
-                                    column.DefaultValue = null;
-                                }
-                            }
+                        case DataContent.LASTNAME:                           
+                            sql2 = BuildSqlQuery(sql2, faker.Person.LastName, column);                           
                             break;
                         case DataContent.GUID:
                             sql2 += "'" + Guid.NewGuid() + "',";
                             break;
                         case DataContent.DATE:
-                            if (valueFrequency == 0)
-                            {
-                                sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth.ToShortDateString()) +
-                                        "',";
-                            }
-                            else
-                            {
-                                column.DefaultValue = (column.DefaultValue ?? faker.Person.DateOfBirth.ToShortDateString());
-                                sql2 += "'" + column.DefaultValue + "',";
-                                column.ValueFrequency--;
-                                if (column.ValueFrequency == 0)
-                                {
-                                    column.DefaultValue = null;
-                                }
-                            }
+                            sql2 = BuildSqlQuery(sql2, faker.Person.DateOfBirth.ToShortDateString(), column);                           
                             break;
-                        case DataContent.DATETIME:
-                            if (valueFrequency == 0)
-                            {
-                                sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth) + "',";
-                            }
-                            else
-                            {
-                                column.DefaultValue = (column.DefaultValue ?? faker.Person.DateOfBirth);
-                                sql2 += "'" + column.DefaultValue + "',";
-                                column.ValueFrequency--;
-                                if (column.ValueFrequency == 0)
-                                {
-                                    column.DefaultValue = null;
-                                }
-                            }
+                        case DataContent.DATETIME:                            
+                            sql2 = BuildSqlQuery(sql2, faker.Person.DateOfBirth, column);                           
                             break;
                         case DataContent.COMPANY:
-                            if (valueFrequency == 0)
-                            {
-                                sql2 += "'" + (column.DefaultValue ?? faker.Company.CompanyName()) + "',";
-                            }
-                            else
-                            {
-                                column.DefaultValue = (column.DefaultValue ?? faker.Company.CompanyName());
-                                sql2 += "'" + column.DefaultValue + "',";
-                                column.ValueFrequency--;
-                                if (column.ValueFrequency == 0)
-                                {
-                                    column.DefaultValue = null;
-                                }
-                            }
+                            sql2 = BuildSqlQuery(sql2, faker.Company.CompanyName(), column);                           
                             break;
-                        case DataContent.USERNAME:
-                            if (valueFrequency == 0)
-                            {
-                                sql2 += "'" + (column.DefaultValue ?? faker.Person.UserName) + "',";
-                            }
-                            else
-                            {
-                                column.DefaultValue = (column.DefaultValue ?? faker.Person.UserName);
-                                sql2 += "'" + column.DefaultValue + "',";
-                                column.ValueFrequency--;
-                                if (column.ValueFrequency == 0)
-                                {
-                                    column.DefaultValue = null;
-                                }
-                            }
+                        case DataContent.USERNAME:                            
+                            sql2 = BuildSqlQuery(sql2, faker.Person.UserName, column);                           
                             break;
-                        case DataContent.PHONE:
-                            if (valueFrequency == 0)
-                            {
-                                sql2 += "'" + (column.DefaultValue ?? faker.Phone.PhoneNumber()) + "',";
-                            }
-                            else
-                            {
-                                column.DefaultValue = (column.DefaultValue ?? faker.Phone.PhoneNumber());
-                                sql2 += "'" + column.DefaultValue + "',";
-                                column.ValueFrequency--;
-                                if (column.ValueFrequency == 0)
-                                {
-                                    column.DefaultValue = null;
-                                }
-                            }
+                        case DataContent.PHONE:                           
+                             sql2 = BuildSqlQuery(sql2, faker.Phone.PhoneNumber(), column);                           
                             break;
                     }
                 }
@@ -173,6 +94,12 @@ namespace BogusSQL
                 sql2 += ")";
                 sql += sql1 + sql2 + "\n";
             }
+            return sql;
+        }
+
+        public string GenerateSql()
+        {
+            var sql = GenerateSqlQuery();
             return sql;
         }
     }
