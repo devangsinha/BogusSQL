@@ -13,5 +13,6 @@ namespace BogusSQL
         public string ColumnName { get; set; }
         public int ValueFrequency { get; set; } = 0;
         public object DefaultValue { get; set; }
+        public string Format { get; set; }
     }
 }

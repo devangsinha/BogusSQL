@@ -61,7 +61,6 @@ namespace BogusSQL
                 for (var j = 0; j < ListOfColumns.Count; j++)
                 {
                     var column = ListOfColumns.ElementAt(j);
-                    var valueFrequency = column.ValueFrequency;
                     switch (column.ColumnDataContent)
                     {
                         case DataContent.FIRSTNAME:
@@ -85,8 +84,8 @@ namespace BogusSQL
                         case DataContent.USERNAME:                            
                             sql2 = BuildSqlQuery(sql2, faker.Person.UserName, column);                           
                             break;
-                        case DataContent.PHONE:                           
-                             sql2 = BuildSqlQuery(sql2, faker.Phone.PhoneNumber(), column);                           
+                        case DataContent.PHONE:             
+                             sql2 = BuildSqlQuery(sql2, faker.Phone.PhoneNumber(column.Format), column);                           
                             break;
                     }
                 }

@@ -66,7 +66,8 @@ namespace BogusSQLTest
             {
                 ColumnDataType = DataType.VARCHAR,
                 ColumnDataContent = DataContent.PHONE,
-                ColumnName = "Phone"
+                ColumnName = "Phone",
+                Format = "###-###-####"
             };
             obj.SetColumn(column1);
             obj.SetColumn(column2);
