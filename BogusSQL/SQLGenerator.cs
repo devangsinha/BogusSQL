@@ -79,10 +79,10 @@ namespace BogusSQL
                     switch (column.ColumnDataContent)
                     {
                         case DataContent.FIRSTNAME:
-                            BuildSqlQuery(sql, faker.Person.FirstName, column);
+                            BuildSqlQuery(sql, faker.Person.FirstName.Replace("'", ""), column);
                             break;
                         case DataContent.LASTNAME:                           
-                            BuildSqlQuery(sql, faker.Person.LastName, column);                           
+                            BuildSqlQuery(sql, faker.Person.LastName.Replace("'", ""), column);                           
                             break;
                         case DataContent.GUID:
                             sql.Append("'" + Guid.NewGuid() + "',");
@@ -94,10 +94,10 @@ namespace BogusSQL
                             BuildSqlQuery(sql, faker.Person.DateOfBirth, column);                           
                             break;
                         case DataContent.COMPANY:
-                            BuildSqlQuery(sql, faker.Company.CompanyName(), column);                           
+                            BuildSqlQuery(sql, faker.Company.CompanyName().Replace("'", ""), column);                           
                             break;
                         case DataContent.USERNAME:                            
-                            BuildSqlQuery(sql, faker.Person.UserName, column);                           
+                            BuildSqlQuery(sql, faker.Person.UserName.Replace("'", ""), column);                           
                             break;
                         case DataContent.PHONE:             
                              BuildSqlQuery(sql, faker.Phone.PhoneNumber(column.Format), column);                           

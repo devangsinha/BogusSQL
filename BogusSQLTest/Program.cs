@@ -21,7 +21,7 @@ namespace BogusSQLTest
             {
                 ColumnDataType = DataType.UNIQUEIDENTIFIER,
                 ColumnDataContent = DataContent.GUID,
-                ColumnName = "GUID"
+                ColumnName = "Id"
             };
             var column2 = new Column
             {
