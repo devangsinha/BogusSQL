@@ -48,31 +48,124 @@ namespace BogusSQL
                 for (var j = 0; j < ListOfColumns.Count; j++)
                 {
                     var column = ListOfColumns.ElementAt(j);
+                    var valueFrequency = column.ValueFrequency;
                     switch (column.ColumnDataContent)
                     {
                         case DataContent.FIRSTNAME:
-                            sql2 += "'" + (column.DefaultValue ?? faker.Person.FirstName) + "',";
+                            if (valueFrequency == 0)
+                            {
+                                sql2 += "'" + (column.DefaultValue ?? faker.Person.FirstName) + "',";
+                            }
+                            else
+                            {
+                                column.DefaultValue = (column.DefaultValue ?? faker.Person.FirstName);
+                                sql2 += "'" + column.DefaultValue + "',";
+                                column.ValueFrequency--;
+                                if (column.ValueFrequency == 0)
+                                {
+                                    column.DefaultValue = null;
+                                }
+                            }
                             break;
                         case DataContent.LASTNAME:
-                            sql2 += "'" + (column.DefaultValue ?? faker.Person.LastName) + "',";
+                            if (valueFrequency == 0)
+                            {
+                                sql2 += "'" + (column.DefaultValue ?? faker.Person.LastName) + "',";
+                            }
+                            else
+                            {
+                                column.DefaultValue = (column.DefaultValue ?? faker.Person.LastName);
+                                sql2 += "'" + column.DefaultValue + "',";
+                                column.ValueFrequency--;
+                                if (column.ValueFrequency == 0)
+                                {
+                                    column.DefaultValue = null;
+                                }
+                            }
                             break;
                         case DataContent.GUID:
                             sql2 += "'" + Guid.NewGuid() + "',";
                             break;
                         case DataContent.DATE:
-                            sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth.ToShortDateString()) + "',";
+                            if (valueFrequency == 0)
+                            {
+                                sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth.ToShortDateString()) +
+                                        "',";
+                            }
+                            else
+                            {
+                                column.DefaultValue = (column.DefaultValue ?? faker.Person.DateOfBirth.ToShortDateString());
+                                sql2 += "'" + column.DefaultValue + "',";
+                                column.ValueFrequency--;
+                                if (column.ValueFrequency == 0)
+                                {
+                                    column.DefaultValue = null;
+                                }
+                            }
                             break;
-                        case DataContent.DATETIME:                            
-                            sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth) + "',";
+                        case DataContent.DATETIME:
+                            if (valueFrequency == 0)
+                            {
+                                sql2 += "'" + (column.DefaultValue ?? faker.Person.DateOfBirth) + "',";
+                            }
+                            else
+                            {
+                                column.DefaultValue = (column.DefaultValue ?? faker.Person.DateOfBirth);
+                                sql2 += "'" + column.DefaultValue + "',";
+                                column.ValueFrequency--;
+                                if (column.ValueFrequency == 0)
+                                {
+                                    column.DefaultValue = null;
+                                }
+                            }
                             break;
                         case DataContent.COMPANY:
-                            sql2 += "'" + (column.DefaultValue ?? faker.Company.CompanyName()) + "',";
+                            if (valueFrequency == 0)
+                            {
+                                sql2 += "'" + (column.DefaultValue ?? faker.Company.CompanyName()) + "',";
+                            }
+                            else
+                            {
+                                column.DefaultValue = (column.DefaultValue ?? faker.Company.CompanyName());
+                                sql2 += "'" + column.DefaultValue + "',";
+                                column.ValueFrequency--;
+                                if (column.ValueFrequency == 0)
+                                {
+                                    column.DefaultValue = null;
+                                }
+                            }
                             break;
                         case DataContent.USERNAME:
-                            sql2 += "'" + (column.DefaultValue ?? faker.Person.UserName) + "',";
+                            if (valueFrequency == 0)
+                            {
+                                sql2 += "'" + (column.DefaultValue ?? faker.Person.UserName) + "',";
+                            }
+                            else
+                            {
+                                column.DefaultValue = (column.DefaultValue ?? faker.Person.UserName);
+                                sql2 += "'" + column.DefaultValue + "',";
+                                column.ValueFrequency--;
+                                if (column.ValueFrequency == 0)
+                                {
+                                    column.DefaultValue = null;
+                                }
+                            }
                             break;
                         case DataContent.PHONE:
-                            sql2 += "'" + (column.DefaultValue ?? faker.Phone.PhoneNumber()) + "',";
+                            if (valueFrequency == 0)
+                            {
+                                sql2 += "'" + (column.DefaultValue ?? faker.Phone.PhoneNumber()) + "',";
+                            }
+                            else
+                            {
+                                column.DefaultValue = (column.DefaultValue ?? faker.Phone.PhoneNumber());
+                                sql2 += "'" + column.DefaultValue + "',";
+                                column.ValueFrequency--;
+                                if (column.ValueFrequency == 0)
+                                {
+                                    column.DefaultValue = null;
+                                }
+                            }
                             break;
                     }
                 }

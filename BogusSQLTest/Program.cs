@@ -14,7 +14,7 @@ namespace BogusSQLTest
             var obj = new SqlGenerator
             {
                 TableName = "MyTable",
-                RowCount = 100
+                RowCount = 10
             };
             var column1 = new Column
             {
@@ -27,19 +27,22 @@ namespace BogusSQLTest
                 ColumnDataType = DataType.VARCHAR,
                 ColumnDataContent = DataContent.FIRSTNAME,
                 ColumnName = "FirstName",
-                DefaultValue = "DEVANG"
+                DefaultValue = "DEVANG",
+                ValueFrequency = 3
             };
             var column3 = new Column
             {
                 ColumnDataType = DataType.VARCHAR,
                 ColumnDataContent = DataContent.LASTNAME,
-                ColumnName = "LastName"
+                ColumnName = "LastName",
+                ValueFrequency = 2
             };
             var column4 = new Column
             {
                 ColumnDataType = DataType.DATE,
                 ColumnDataContent = DataContent.DATE,
-                ColumnName = "Birthday"
+                ColumnName = "Birthday",
+                ValueFrequency = 4
             };
             var column5 = new Column
             {

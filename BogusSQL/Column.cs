@@ -11,7 +11,7 @@ namespace BogusSQL
         public DataType ColumnDataType { get; set; }
         public DataContent ColumnDataContent { get; set; }
         public string ColumnName { get; set; }
-        public int Count { get; set; }
+        public int ValueFrequency { get; set; } = 0;
         public object DefaultValue { get; set; }
     }
 }
