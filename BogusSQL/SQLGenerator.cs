@@ -25,75 +25,72 @@ namespace BogusSQL
             ListOfColumns.Add(column);
         }
 
-        private static string BuildSqlQuery(string sql, object randomValue, Column column)
+        private static void BuildSqlQuery(StringBuilder sql, object randomValue, Column column)
         {
             if (column.ValueFrequency == 0)
             {
-                sql += "'" + (column.DefaultValue ?? randomValue) + "',";
+                sql.Append("'" + (column.DefaultValue ?? randomValue) + "',");
             }
             else
             {
                 column.DefaultValue = (column.DefaultValue ?? randomValue);
-                sql += "'" + column.DefaultValue + "',";
+                sql.Append("'" + column.DefaultValue + "',");
                 column.ValueFrequency--;
                 if (column.ValueFrequency == 0)
                 {
                     column.DefaultValue = null;
                 }
             }
-            return sql;
         }
 
         private string GenerateSqlQuery()
         {                      
-            var sql = "";
+            var sql = new StringBuilder();
             for (var i = 0; i < RowCount; i++)
             {
                 var faker = new Faker();
-                var sql1 = "INSERT INTO " + TableName + " (";
+                sql.Append("INSERT INTO " + TableName + " (");
                 foreach (var column in ListOfColumns)
                 {
-                    sql1 += column.ColumnName + ",";
+                    sql.Append(column.ColumnName + ",");
                 }
-                sql1 = sql1.Remove(sql1.LastIndexOf(",", StringComparison.Ordinal));
-                sql1 += ") VALUES (";
-                var sql2 = "";
+                sql.Length -= 1;
+                sql.Append(") VALUES (");
                 for (var j = 0; j < ListOfColumns.Count; j++)
                 {
                     var column = ListOfColumns.ElementAt(j);
                     switch (column.ColumnDataContent)
                     {
                         case DataContent.FIRSTNAME:
-                            sql2 = BuildSqlQuery(sql2, faker.Person.FirstName, column);
+                            BuildSqlQuery(sql, faker.Person.FirstName, column);
                             break;
                         case DataContent.LASTNAME:                           
-                            sql2 = BuildSqlQuery(sql2, faker.Person.LastName, column);                           
+                            BuildSqlQuery(sql, faker.Person.LastName, column);                           
                             break;
                         case DataContent.GUID:
-                            sql2 += "'" + Guid.NewGuid() + "',";
+                            sql.Append("'" + Guid.NewGuid() + "',");
                             break;
                         case DataContent.DATE:
-                            sql2 = BuildSqlQuery(sql2, faker.Person.DateOfBirth.ToShortDateString(), column);                           
+                            BuildSqlQuery(sql, faker.Person.DateOfBirth.ToShortDateString(), column);                           
                             break;
                         case DataContent.DATETIME:                            
-                            sql2 = BuildSqlQuery(sql2, faker.Person.DateOfBirth, column);                           
+                            BuildSqlQuery(sql, faker.Person.DateOfBirth, column);                           
                             break;
                         case DataContent.COMPANY:
-                            sql2 = BuildSqlQuery(sql2, faker.Company.CompanyName(), column);                           
+                            BuildSqlQuery(sql, faker.Company.CompanyName(), column);                           
                             break;
                         case DataContent.USERNAME:                            
-                            sql2 = BuildSqlQuery(sql2, faker.Person.UserName, column);                           
+                            BuildSqlQuery(sql, faker.Person.UserName, column);                           
                             break;
                         case DataContent.PHONE:             
-                             sql2 = BuildSqlQuery(sql2, faker.Phone.PhoneNumber(column.Format), column);                           
+                             BuildSqlQuery(sql, faker.Phone.PhoneNumber(column.Format), column);                           
                             break;
                     }
                 }
-                sql2 = sql2.Remove(sql2.LastIndexOf(",", StringComparison.Ordinal));
-                sql2 += ")";
-                sql += sql1 + sql2 + "\n";
+                sql.Length -= 1;
+                sql.Append(")\n");
             }
-            return sql;
+            return sql.ToString();
         }
 
         public string GenerateSql()
