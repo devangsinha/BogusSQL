@@ -16,14 +16,63 @@ namespace BogusSQLTest
                 TableName = "MyTable",
                 RowCount = 100
             };
-            obj.SetColumn("GUID", DataType.UNIQUEIDENTIFIER, DataContent.GUID);
-            obj.SetColumn("FirstName", DataType.VARCHAR, DataContent.FIRSTNAME);
-            obj.SetColumn("LastName", DataType.VARCHAR, DataContent.LASTNAME);
-            obj.SetColumn("Birthday", DataType.DATE, DataContent.DATE);
-            obj.SetColumn("Timestamp", DataType.DATETIME, DataContent.DATETIME);
-            obj.SetColumn("Company", DataType.VARCHAR, DataContent.COMPANY);
-            obj.SetColumn("Username", DataType.VARCHAR, DataContent.USERNAME);
-            obj.SetColumn("Phone", DataType.VARCHAR, DataContent.PHONE);
+            var column1 = new Column
+            {
+                ColumnDataType = DataType.UNIQUEIDENTIFIER,
+                ColumnDataContent = DataContent.GUID,
+                ColumnName = "GUID"
+            };
+            var column2 = new Column
+            {
+                ColumnDataType = DataType.VARCHAR,
+                ColumnDataContent = DataContent.FIRSTNAME,
+                ColumnName = "FirstName"
+            };
+            var column3 = new Column
+            {
+                ColumnDataType = DataType.VARCHAR,
+                ColumnDataContent = DataContent.LASTNAME,
+                ColumnName = "LastName"
+            };
+            var column4 = new Column
+            {
+                ColumnDataType = DataType.DATE,
+                ColumnDataContent = DataContent.DATE,
+                ColumnName = "Birthday"
+            };
+            var column5 = new Column
+            {
+                ColumnDataType = DataType.DATETIME,
+                ColumnDataContent = DataContent.DATETIME,
+                ColumnName = "Timestamp"
+            };
+            var column6 = new Column
+            {
+                ColumnDataType = DataType.VARCHAR,
+                ColumnDataContent = DataContent.COMPANY,
+                ColumnName = "Company"
+            };
+            var column7 = new Column
+            {
+                ColumnDataType = DataType.VARCHAR,
+                ColumnDataContent = DataContent.USERNAME,
+                ColumnName = "Username"
+            };
+            var column8 = new Column
+            {
+                ColumnDataType = DataType.VARCHAR,
+                ColumnDataContent = DataContent.PHONE,
+                ColumnName = "Phone"
+            };
+            obj.SetColumn(column1);
+            obj.SetColumn(column2);
+            obj.SetColumn(column3);
+            obj.SetColumn(column4);
+            obj.SetColumn(column5);
+            obj.SetColumn(column6);
+            obj.SetColumn(column7);
+            obj.SetColumn(column8); 
+            
             var sql = obj.GenerateSql();
             Console.WriteLine(sql);
             Console.ReadKey();

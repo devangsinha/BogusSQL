@@ -13,22 +13,16 @@ namespace BogusSQL
         public string TableName { get; set; }
         public int RowCount { get; set; }
 
-        private readonly List<Schema> ListOfColumns;
+        private readonly List<Column> ListOfColumns;
         
         public SqlGenerator()
         {
-            ListOfColumns = new List<Schema>();
+            ListOfColumns = new List<Column>();
         }
 
-        public void SetColumn(string columnName, DataType dataType, DataContent dataContent)
+        public void SetColumn(Column column)
         {
-            var schema = new Schema
-            {
-                ColumnName = columnName,
-                ColumnDataType = dataType,
-                ColumnDataContent = dataContent
-            };
-            ListOfColumns.Add(schema);
+            ListOfColumns.Add(column);
         }
 
         public string GenerateSql()
@@ -37,7 +31,7 @@ namespace BogusSQL
             return sql;
         }
 
-        public string GenerateSqlQuery()
+        private string GenerateSqlQuery()
         {                      
             var sql = "";
             for (var i = 0; i < RowCount; i++)

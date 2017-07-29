@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BogusSQL
 {
-    class Schema
+    public class Column
     {
-        public string ColumnName { get; set; }
         public DataType ColumnDataType { get; set; }
         public DataContent ColumnDataContent { get; set; }
+        public string ColumnName { get; set; }
+        public int Count { get; set; }
     }
 }
