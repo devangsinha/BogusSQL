@@ -11,11 +11,11 @@ namespace BogusSQLTest
     class Program
     {
         static void Main(string[] args)
-        {           
+        {
             var obj = new SqlGenerator
             {
                 TableName = "MyTable",
-                RowCount = 4000
+                RowCount = 70
             };
             var column1 = new Column
             {
@@ -79,9 +79,8 @@ namespace BogusSQLTest
             obj.SetColumn(column7);
             obj.SetColumn(column8); 
             
-            var sql = obj.GenerateSql();
-            Console.WriteLine(sql);
-            Console.ReadKey();
+            obj.GenerateSqlQuery();
+            //Console.ReadKey();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -43,7 +44,23 @@ namespace BogusSQL
             }
         }
 
-        private string GenerateSqlQuery()
+        private static void WriteSQLToFile(string sql)
+        {
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            var fileName = "SQLQuery_" + DateTime.Now.ToShortDateString().Replace("/", "");
+            var extension = ".sql";
+            var fullPath = path + "\\" + fileName + extension;
+            var count = 1;
+
+            while (File.Exists(fullPath))
+            {
+                var tempFileName = string.Format("{0}({1})", fileName, count++);
+                fullPath = Path.Combine(path, tempFileName + extension);                
+            }
+            File.WriteAllText(fullPath, sql);
+        }
+
+        public void GenerateSqlQuery()
         {                      
             var sql = new StringBuilder();
             for (var i = 0; i < RowCount; i++)
@@ -90,13 +107,7 @@ namespace BogusSQL
                 sql.Length -= 1;
                 sql.Append(")\n");
             }
-            return sql.ToString();
-        }
-
-        public string GenerateSql()
-        {
-            var sql = GenerateSqlQuery();
-            return sql;
+            WriteSQLToFile(sql.ToString());
         }
     }
 }
