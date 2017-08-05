@@ -14,5 +14,10 @@ namespace BogusSQL
         public int ValueFrequency { get; set; } = 0;
         public object DefaultValue { get; set; }
         public string Format { get; set; }
+        public bool UseAbbreviation { get; set; }
+        public bool UseNumbersOnly { get; set; }
+        public bool UseLettersOnly { get; set; }
+        public bool UseLettersAndNumbers { get; set; }
+        public int Length { get; set; } = 8;
     }
 }

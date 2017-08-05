@@ -8,7 +8,7 @@ namespace BogusSQL
 {
     public enum DataType
     {
-        VARCHAR,
+        NVARCHAR,
         INT,
         UNIQUEIDENTIFIER,
         DATE,

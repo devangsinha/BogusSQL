@@ -8,18 +8,23 @@ namespace BogusSQL
 {
     public enum DataContent
     {
+        FULLNAME,
         FIRSTNAME,
         LASTNAME,
         STREETADDRESS,
         CITY,
         STATE,
         ZIP,
+        COUNTRY,
         GUID,
         DATE,
         DATETIME,
         COMPANY,
         PHONE,
         USERNAME,
-        WEBSITE
+        WEBSITE,
+        LATITUDE,
+        LONGITUDE,
+        ALPHANUMERIC
     }
 }
