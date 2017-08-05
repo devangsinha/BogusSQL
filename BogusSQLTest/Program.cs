@@ -129,6 +129,12 @@ namespace BogusSQLTest
                 ColumnDataContent = DataContent.FULLNAME,
                 ColumnName = "Manager"
             };
+            var column18 = new Column
+            {
+                ColumnDataType = DataType.NVARCHAR,
+                ColumnDataContent = DataContent.WEBSITE,
+                ColumnName = "Personal Website"
+            };
 
             obj.SetColumn(column1);
             obj.SetColumn(column2);
@@ -147,6 +153,7 @@ namespace BogusSQLTest
             obj.SetColumn(column15);
             obj.SetColumn(column16);
             obj.SetColumn(column17);
+            obj.SetColumn(column18);
 
             obj.GenerateSqlQuery();
         }

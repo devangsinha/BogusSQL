@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Bogus;
 
 namespace BogusSQL
@@ -44,6 +42,101 @@ namespace BogusSQL
             }
         }
 
+        private static void AddColumnValueToSql(Column column, StringBuilder sql, Faker faker)
+        {
+            switch (column.ColumnDataContent)
+            {
+                case DataContent.FULLNAME:
+                    BuildSqlQuery(sql, faker.Person.FirstName.Replace("'", "") + " " + faker.Person.LastName.Replace("'", ""), column);
+                    break;
+                case DataContent.FIRSTNAME:
+                    BuildSqlQuery(sql, faker.Person.FirstName.Replace("'", ""), column);
+                    break;
+                case DataContent.LASTNAME:
+                    BuildSqlQuery(sql, faker.Person.LastName.Replace("'", ""), column);
+                    break;
+                case DataContent.GUID:
+                    sql.Append("'" + Guid.NewGuid() + "',");
+                    break;
+                case DataContent.DATE:
+                    BuildSqlQuery(sql, faker.Person.DateOfBirth.ToShortDateString(), column);
+                    break;
+                case DataContent.DATETIME:
+                    BuildSqlQuery(sql, faker.Person.DateOfBirth, column);
+                    break;
+                case DataContent.COMPANY:
+                    BuildSqlQuery(sql, faker.Company.CompanyName().Replace("'", ""), column);
+                    break;
+                case DataContent.USERNAME:
+                    BuildSqlQuery(sql, faker.Person.UserName.Replace("'", ""), column);
+                    break;
+                case DataContent.PHONE:
+                    BuildSqlQuery(sql, faker.Phone.PhoneNumber(column.Format), column);
+                    break;
+                case DataContent.LATITUDE:
+                    BuildSqlQuery(sql, faker.Address.Latitude().ToString(), column);
+                    break;
+                case DataContent.LONGITUDE:
+                    BuildSqlQuery(sql, faker.Address.Longitude().ToString(), column);
+                    break;
+                case DataContent.STREETADDRESS:
+                    BuildSqlQuery(sql, faker.Address.StreetAddress(), column);
+                    break;
+                case DataContent.CITY:
+                    BuildSqlQuery(sql, faker.Address.City(), column);
+                    break;
+                case DataContent.STATE:
+                    BuildSqlQuery(sql,
+                        column.UseAbbreviation ? faker.Address.StateAbbr() : faker.Address.State(), column);
+                    break;
+                case DataContent.ZIP:
+                    BuildSqlQuery(sql, faker.Address.ZipCode(column.Format), column);
+                    break;
+                case DataContent.COUNTRY:
+                    BuildSqlQuery(sql, faker.Address.Country(), column);
+                    break;
+                case DataContent.ALPHANUMERIC:
+                    AddAlphanumericColumnValueToSql(column, sql);
+                    break;
+                case DataContent.WEBSITE:
+                    BuildSqlQuery(sql, faker.Internet.Url(), column);
+                    break;
+            }
+        }
+
+        private static void AddAlphanumericColumnValueToSql(Column column, StringBuilder sql)
+        {
+            if (column.UseLettersOnly == false && column.UseNumbersOnly == false &&
+                column.UseLettersAndNumbers == false && column.Length == 8)
+            {
+                BuildSqlQuery(sql, new Randomizer().Replace("********"), column);
+            }
+            else if (column.UseLettersOnly && column.UseNumbersOnly == false &&
+                     column.UseLettersAndNumbers == false && column.Length == 8)
+            {
+                BuildSqlQuery(sql, new Randomizer().Replace("????????"), column);
+            }
+            else if (column.UseLettersOnly == false && column.UseNumbersOnly &&
+                     column.UseLettersAndNumbers == false && column.Length == 8)
+            {
+                BuildSqlQuery(sql, new Randomizer().Replace("########"), column);
+            }
+            else if (column.UseLettersOnly && column.UseNumbersOnly == false &&
+                     column.UseLettersAndNumbers == false && column.Length != 8)
+            {
+                BuildSqlQuery(sql, new Randomizer().Replace(new string('?', column.Length)), column);
+            }
+            else if (column.UseLettersOnly == false && column.UseNumbersOnly &&
+                     column.UseLettersAndNumbers == false && column.Length != 8)
+            {
+                BuildSqlQuery(sql, new Randomizer().Replace(new string('#', column.Length)), column);
+            }
+            else
+            {
+                BuildSqlQuery(sql, new Randomizer().Replace(new string('*', column.Length)), column);
+            }
+        }
+
         private static void WriteSqlToFile(string sql)
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -76,89 +169,7 @@ namespace BogusSQL
                 for (var j = 0; j < ListOfColumns.Count; j++)
                 {
                     var column = ListOfColumns.ElementAt(j);
-                    switch (column.ColumnDataContent)
-                    {
-                        case DataContent.FULLNAME:
-                            BuildSqlQuery(sql, faker.Person.FirstName.Replace("'", "") + " " + faker.Person.LastName.Replace("'", ""), column);
-                            break;
-                        case DataContent.FIRSTNAME:
-                            BuildSqlQuery(sql, faker.Person.FirstName.Replace("'", ""), column);
-                            break;
-                        case DataContent.LASTNAME:                           
-                            BuildSqlQuery(sql, faker.Person.LastName.Replace("'", ""), column);                           
-                            break;
-                        case DataContent.GUID:
-                            sql.Append("'" + Guid.NewGuid() + "',");
-                            break;
-                        case DataContent.DATE:
-                            BuildSqlQuery(sql, faker.Person.DateOfBirth.ToShortDateString(), column);                           
-                            break;
-                        case DataContent.DATETIME:                            
-                            BuildSqlQuery(sql, faker.Person.DateOfBirth, column);                           
-                            break;
-                        case DataContent.COMPANY:
-                            BuildSqlQuery(sql, faker.Company.CompanyName().Replace("'", ""), column);                           
-                            break;
-                        case DataContent.USERNAME:                            
-                            BuildSqlQuery(sql, faker.Person.UserName.Replace("'", ""), column);                           
-                            break;
-                        case DataContent.PHONE:             
-                             BuildSqlQuery(sql, faker.Phone.PhoneNumber(column.Format), column);                           
-                            break;
-                        case DataContent.LATITUDE:
-                            BuildSqlQuery(sql, faker.Address.Latitude().ToString(), column);
-                            break;
-                        case DataContent.LONGITUDE:
-                            BuildSqlQuery(sql, faker.Address.Longitude().ToString(), column);
-                            break;
-                        case DataContent.STREETADDRESS:
-                            BuildSqlQuery(sql, faker.Address.StreetAddress(), column);
-                            break;
-                        case DataContent.CITY:
-                            BuildSqlQuery(sql, faker.Address.City(), column);
-                            break;
-                        case DataContent.STATE:
-                            BuildSqlQuery(sql,
-                                column.UseAbbreviation ? faker.Address.StateAbbr() : faker.Address.State(), column);
-                            break;
-                        case DataContent.ZIP:
-                            BuildSqlQuery(sql, faker.Address.ZipCode(column.Format), column);
-                            break;
-                        case DataContent.COUNTRY:
-                            BuildSqlQuery(sql, faker.Address.Country(), column);
-                            break;
-                        case DataContent.ALPHANUMERIC:
-                            if (column.UseLettersOnly == false && column.UseNumbersOnly == false &&
-                                column.UseLettersAndNumbers == false && column.Length == 8)
-                            {
-                                BuildSqlQuery(sql, new Randomizer().Replace("********"), column);
-                            }
-                            else if (column.UseLettersOnly && column.UseNumbersOnly == false &&
-                                     column.UseLettersAndNumbers == false && column.Length == 8)
-                            {
-                                BuildSqlQuery(sql, new Randomizer().Replace("????????"), column);
-                            }
-                            else if (column.UseLettersOnly == false && column.UseNumbersOnly &&
-                                     column.UseLettersAndNumbers == false && column.Length == 8)
-                            {
-                                BuildSqlQuery(sql, new Randomizer().Replace("########"), column);
-                            }
-                            else if (column.UseLettersOnly && column.UseNumbersOnly == false &&
-                                     column.UseLettersAndNumbers == false && column.Length != 8)
-                            {
-                                BuildSqlQuery(sql, new Randomizer().Replace(new string('?', column.Length)), column);
-                            }
-                            else if (column.UseLettersOnly == false && column.UseNumbersOnly &&
-                                     column.UseLettersAndNumbers == false && column.Length != 8)
-                            {
-                                BuildSqlQuery(sql, new Randomizer().Replace(new string('#', column.Length)), column);
-                            }
-                            else
-                            {
-                                BuildSqlQuery(sql, new Randomizer().Replace(new string('*', column.Length)), column);
-                            }
-                            break;
-                    }
+                    AddColumnValueToSql(column, sql, faker);
                 }
                 sql.Length -= 1;
                 sql.Append(")\n");
