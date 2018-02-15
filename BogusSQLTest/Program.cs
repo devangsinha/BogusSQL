@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using  BogusSQL;
 
 namespace BogusSQLTest
@@ -15,7 +10,7 @@ namespace BogusSQLTest
             var obj = new SqlGenerator
             {
                 TableName = "MyTable",
-                RowCount = 70
+                RowCount = 7000
             };
             var column1 = new Column
             {
@@ -28,22 +23,19 @@ namespace BogusSQLTest
                 ColumnDataType = DataType.NVARCHAR,
                 ColumnDataContent = DataContent.FIRSTNAME,
                 ColumnName = "FirstName",
-                DefaultValue = "DEVANG",
-                ValueFrequency = 3
+                DefaultValue = "DEVANG"
             };
             var column3 = new Column
             {
                 ColumnDataType = DataType.NVARCHAR,
                 ColumnDataContent = DataContent.LASTNAME,
-                ColumnName = "LastName",
-                ValueFrequency = 2
+                ColumnName = "LastName"
             };
             var column4 = new Column
             {
                 ColumnDataType = DataType.DATE,
                 ColumnDataContent = DataContent.DATE,
-                ColumnName = "Birthday",
-                ValueFrequency = 4
+                ColumnName = "Birthday"
             };
             var column5 = new Column
             {
@@ -55,13 +47,15 @@ namespace BogusSQLTest
             {
                 ColumnDataType = DataType.NVARCHAR,
                 ColumnDataContent = DataContent.COMPANY,
-                ColumnName = "Company"
+                ColumnName = "Company",
+                AllowNull = true
             };
             var column7 = new Column
             {
                 ColumnDataType = DataType.NVARCHAR,
                 ColumnDataContent = DataContent.USERNAME,
-                ColumnName = "Username"
+                ColumnName = "Username",
+                SetNull = true
             };
             var column8 = new Column
             {
@@ -136,26 +130,31 @@ namespace BogusSQLTest
                 ColumnName = "Personal Website"
             };
 
-            obj.SetColumn(column1);
-            obj.SetColumn(column2);
-            obj.SetColumn(column3);
-            obj.SetColumn(column4);
-            obj.SetColumn(column5);
-            obj.SetColumn(column6);
-            obj.SetColumn(column7);
-            obj.SetColumn(column8); 
-            obj.SetColumn(column9); 
-            obj.SetColumn(column10); 
-            obj.SetColumn(column11); 
-            obj.SetColumn(column12); 
-            obj.SetColumn(column13); 
-            obj.SetColumn(column14);
-            obj.SetColumn(column15);
-            obj.SetColumn(column16);
-            obj.SetColumn(column17);
-            obj.SetColumn(column18);
+            var columns = new List<Column>()
+            {
+                column1,
+                column2,
+                column3,
+                column4,
+                column5,
+                column6,
+                column7,
+                column8,
+                column9,
+                column10,
+                column11,
+                column12,
+                column13,
+                column14,
+                column15,
+                column16,
+                column17,
+                column18
+            };
+            
+            obj.SetColumns(columns);
 
-            obj.GenerateSqlQuery();
+            obj.GenerateSqlQuery();            
         }
     }
 }

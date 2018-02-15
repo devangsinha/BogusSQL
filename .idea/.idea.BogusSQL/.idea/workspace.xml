@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4fc376e7-ba88-4d62-8cc9-779d587f0e29" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.BogusSQL/.idea/contentModel.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.BogusSQL/.idea/indexLayout.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.BogusSQL/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.BogusSQL/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.BogusSQL/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.BogusSQL/riderModule.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.csproj.CopyComplete" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.csproj.CoreCompileInputs.cache" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.csproj.CopyComplete" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.csproj.CoreCompileInputs.cache" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/Column.cs" afterPath="$PROJECT_DIR$/BogusSQL/Column.cs" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/SQLGenerator.cs" afterPath="$PROJECT_DIR$/BogusSQL/SQLGenerator.cs" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/bin/Debug/BogusSQL.dll" afterPath="$PROJECT_DIR$/BogusSQL/bin/Debug/BogusSQL.dll" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/bin/Debug/BogusSQL.pdb" afterPath="$PROJECT_DIR$/BogusSQL/bin/Debug/BogusSQL.pdb" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.csproj.FileListAbsolute.txt" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.csprojResolveAssemblyReference.cache" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.dll" afterPath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.dll" />
+      <change beforePath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.pdb" afterPath="$PROJECT_DIR$/BogusSQL/obj/Debug/BogusSQL.pdb" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/Program.cs" afterPath="$PROJECT_DIR$/BogusSQLTest/Program.cs" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQL.dll" afterPath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQL.dll" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQL.pdb" afterPath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQL.pdb" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQLTest.exe" afterPath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQLTest.exe" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQLTest.pdb" afterPath="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQLTest.pdb" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.csproj.FileListAbsolute.txt" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.csprojResolveAssemblyReference.cache" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.exe" afterPath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.exe" />
+      <change beforePath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.pdb" afterPath="$PROJECT_DIR$/BogusSQLTest/obj/Debug/BogusSQLTest.pdb" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BogusSQLTest/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+              <folding>
+                <marker date="1518731466038" expanded="false" signature="6:50" ph="..." />
+                <marker date="1518731466038" expanded="true" signature="74:5152" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="94:5150" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="140:5144" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="202:288" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="339:502" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="553:761" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="812:977" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="1028:1185" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="1236:1402" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="1453:1650" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="1701:1898" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="1949:2149" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="2200:2365" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="2417:2584" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="2636:2812" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="2864:3021" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="3073:3272" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="3324:3511" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="3563:3763" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="3815:4061" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="4113:4277" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="4329:4501" ph="{...}" />
+                <marker date="1518731466038" expanded="true" signature="4561:5034" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/BogusSQLTest/Program.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1270" />
+    <option name="height" value="691" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="BogusSQL (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="BogusSQL (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="BogusSQLTest" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/BogusSQLTest/bin/Debug/BogusSQLTest.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BogusSQLTest/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <envs />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/BogusSQLTest/BogusSQLTest.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.5.2" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4fc376e7-ba88-4d62-8cc9-779d587f0e29" name="Default" comment="" />
+      <created>1518731561941</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1518731561941</updated>
+      <workItem from="1518731563245" duration="113000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="113000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="711" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24765626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39906102" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BogusSQLTest/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <marker date="1518731466038" expanded="false" signature="6:50" ph="..." />
+            <marker date="1518731466038" expanded="true" signature="74:5152" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="94:5150" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="140:5144" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="202:288" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="339:502" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="553:761" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="812:977" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="1028:1185" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="1236:1402" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="1453:1650" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="1701:1898" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="1949:2149" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="2200:2365" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="2417:2584" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="2636:2812" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="2864:3021" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="3073:3272" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="3324:3511" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="3563:3763" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="3815:4061" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="4113:4277" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="4329:4501" ph="{...}" />
+            <marker date="1518731466038" expanded="true" signature="4561:5034" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

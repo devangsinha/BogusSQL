@@ -12,34 +12,34 @@ namespace BogusSQL
         public string TableName { get; set; }
         public int RowCount { get; set; }
 
-        private readonly List<Column> ListOfColumns;
+        private List<Column> ListOfColumns;
         
         public SqlGenerator()
         {
             ListOfColumns = new List<Column>();
         }
 
-        public void SetColumn(Column column)
+        public void SetColumns(List<Column> columns)
         {
-            ListOfColumns.Add(column);
+            ListOfColumns = columns;
         }
 
         private static void BuildSqlQuery(StringBuilder sql, object randomValue, Column column)
         {
-            if (column.ValueFrequency == 0)
+            if (column.AllowNull)
             {
-                sql.Append("'" + (column.DefaultValue ?? randomValue) + "',");
-            }
-            else
-            {
-                column.DefaultValue = (column.DefaultValue ?? randomValue);
-                sql.Append("'" + column.DefaultValue + "',");
-                column.ValueFrequency--;
-                if (column.ValueFrequency == 0)
+                var random = new Random();
+                if (random.Next() % 3 == 0)
                 {
-                    column.DefaultValue = null;
+                    randomValue = "NULL";
                 }
             }
+
+            if (column.SetNull)
+            {
+                randomValue = "NULL";
+            }
+            sql.Append("'" + (column.DefaultValue ?? randomValue) + "',");
         }
 
         private static void AddColumnValueToSql(Column column, StringBuilder sql, Faker faker)
@@ -80,10 +80,10 @@ namespace BogusSQL
                     BuildSqlQuery(sql, faker.Address.Longitude().ToString(), column);
                     break;
                 case DataContent.STREETADDRESS:
-                    BuildSqlQuery(sql, faker.Address.StreetAddress(), column);
+                    BuildSqlQuery(sql, faker.Address.StreetAddress().Replace("'", ""), column);
                     break;
                 case DataContent.CITY:
-                    BuildSqlQuery(sql, faker.Address.City(), column);
+                    BuildSqlQuery(sql, faker.Address.City().Replace("'", ""), column);
                     break;
                 case DataContent.STATE:
                     BuildSqlQuery(sql,
@@ -93,7 +93,7 @@ namespace BogusSQL
                     BuildSqlQuery(sql, faker.Address.ZipCode(column.Format), column);
                     break;
                 case DataContent.COUNTRY:
-                    BuildSqlQuery(sql, faker.Address.Country(), column);
+                    BuildSqlQuery(sql, faker.Address.Country().Replace("'", ""), column);
                     break;
                 case DataContent.ALPHANUMERIC:
                     AddAlphanumericColumnValueToSql(column, sql);
