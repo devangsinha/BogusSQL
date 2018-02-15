@@ -7,6 +7,16 @@ A C# class library for easily generating SQL INSERT statements for large amount 
 * Generate meaningful test data at row level
 * Extremely fast data generation
 
+## Install BogusSQL via NuGet
+
+If you want to include ClosedXML in your project, you can [install it directly from NuGet](https://www.nuget.org/packages/BogusSQL)
+
+To install ClosedXML, run the following command in the Package Manager Console
+
+```
+PM> Install-Package BogusSQL -Version 1.0.0
+```
+
 ## How to use:
 ```
 using System.Collections.Generic;
