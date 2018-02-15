@@ -1,5 +1,5 @@
 # BogusSQL
-Easily generate SQL INSERT statements for large amount of random test data
+A C# class library for easily generating SQL INSERT statements for large amount of random test data
 
 ## Features
 
