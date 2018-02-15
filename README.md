@@ -10,7 +10,7 @@ A C# class library for easily generating SQL INSERT statements for large amount 
 ## How to use:
 ```
 using System.Collections.Generic;
-using  BogusSQL;
+using BogusSQL;
 
 namespace BogusSQLDemo
 {
