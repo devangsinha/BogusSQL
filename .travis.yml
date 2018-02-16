@@ -1,0 +1,4 @@
+language: csharp
+solution: BogusSQL.sln
+mono:
+  - latest
