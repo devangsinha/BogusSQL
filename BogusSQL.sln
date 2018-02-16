@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusSQL", "BogusSQL\BogusSQL.csproj", "{2A79ED80-4E29-4773-B359-FE026BF47217}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusSQLTest", "BogusSQLTest\BogusSQLTest.csproj", "{6497B16A-8C90-45CC-A10E-4426836B465B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
